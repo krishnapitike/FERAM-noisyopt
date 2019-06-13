@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#PBS -W group_list=cades-theory  ##group_list=cades-birthright OR cades-theory
+#PBS -A theory                   ##birthright OR theory
+#PBS -q skylake                  ##skylake
+#PBS -N jobname
+#PBS -M nq4@ornl.gov
+#PBS -l nodes=1:ppn=36
+#PBS -l walltime=48:00:00
+#PBS -l qos=std                ##burst, std, long
+
+module load PE-intel
+
+python3 FERAM-noisyopt.py
